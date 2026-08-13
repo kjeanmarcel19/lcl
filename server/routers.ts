@@ -6,7 +6,7 @@
  * absent de l'archive (c'est le cas quand le code est téléchargé depuis
  * l'interface).
  */
-import { COOKIE_NAME } from "@shared/const";
+import { COOKIE_NAME } from "../shared/const";
 import type { CreateExpressContextOptions } from "@trpc/server/adapters/express";
 import type { CookieOptions, Request } from "express";
 import { virementRouter } from "./virement";
