@@ -1,14 +1,13 @@
 {
   "builds": [
     {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "dist/public" }
-    },
-    {
-      "src": "api/trpc.js",
-      "use": "@vercel/node",
-      "config": { "maxDuration": 30 }
     }
   ],
   "routes": [
