@@ -22,7 +22,7 @@
  */
 // Note : Vercel @vercel/node utilise esbuild qui ne résout pas les alias
 // tsconfig (@shared/*). Nous importons directement le fichier.
-import { appRouter, createContext } from "../server/routers.ts";
+import { appRouter, createContext } from "./routers.ts";
 
 export default function trpcApi(req, res) {
   // Mock léger pour les méthodes de cookie (utilisées par auth.logout)
