@@ -1,35 +1,16 @@
 {
-  "builds": [
-    {
-      "src": "api/*.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist/public" }
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/trpc.js": {
+      "maxDuration": 30
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/trpc/(.*)",
-      "dest": "/api/trpc.js"
-    },
-    {
-      "src": "/api/trpc",
-      "dest": "/api/trpc.js"
-    },
-    {
-      "src": "/favicon\\.svg",
-      "dest": "/favicon.svg"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/api/trpc/:path*",
+      "destination": "/api/trpc"
     }
   ]
 }
