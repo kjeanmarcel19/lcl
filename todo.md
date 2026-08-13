@@ -1,0 +1,23 @@
+- [x] Détail des virements du compte courant sur Ma Synthèse (liste des mouvements récents)
+- [x] Bouton masquer/afficher les soldes comme dans l'app LCL réelle
+- [x] Détail des opérations sur Mes Cartes (derniers paiements)
+- [x] Saisie du montant par pavé numérique sur le formulaire de virement
+- [x] Écran de notifications avec alertes de connexion et virements
+- [x] Badge de compteur de notifications non lues sur l'icône cloche
+- [x] Gestion des bénéficiaires (ajout/suppression avec rappel de l'IBAN)
+- [x] Simulateur de crédit dans la section Crédit renouvelable
+- [x] Écran de détail par carte avec blocage temporaire (testé : carte grise + badge BLOQUÉE TEMPORAIREMENT, durée 30min–24h + personnalisée, déblocage automatique, bouton Débloquer maintenant, compte à rebours affiché)
+- [x] Point d'entrée unique server/index.ts fonctionnel sur Windows (dev avec Vite + tRPC, prod statique) : les modules _core (trpc, context, etc.) restent présents dans le template mais le serveur démarre via server/index.ts sans erreur de chemin
+- [x] Scripts npm sans dépendance à cross-env pour le démarrage
+- [x] Vérifier que npm run dev démarre et sert l'index.html client sans erreur
+- [x] Supprimer toute dépendance à server/_core dans routers.ts et virement.ts (cookies, systemRouter, trpc, context inline)
+- [x] Vérifier qu'aucun fichier du projet n'importe depuis _core (tsc passe ; seules références restantes sont des commentaires)
+- [x] Re-tester npm run dev complet (install propre + dev + build + prod + tests OK en environnement isolé)
+- [x] Corriger le menu profil : chevauche l'en-tête Ma Synthèse (z-index), texte "Jean Dupont – 1000000000" coupé par la bordure blanche arrondie (overflow-visible, z-50, break-words, animation d'entrée 180ms)
+- [x] Menu profil : ligne "Jean Dupont — 1000000000" apparaît encore en fantôme semi-transparent (animation JS keyframes supprimée, z-50, overflow-visible, break-words)
+- [x] Carrousel Mes Cartes : la carte "Mes dépenses" chevauche la 2e carte visible dans le carrousel horizontal (largeurs réduites 270px/96px, gap-3)
+- [x] Tab bar : l'icône active (Synthèse) s'affiche en cercle/rectangle plein au lieu de l'icône SVG (pastille bleue + icône white, IconPortefeuillePetit en currentColor)
+- [x] Carrousel Mes Cartes : chevauchement réécrit en scroll-snap natif avec gap blanc entre cartes (vérifié en capture)
+- [x] Menu profil : rendu via createPortal (react-dom) hors du stacking context du header — ligne "Jean Dupont — 1000000000" nette et complète (vérifié en zoom)
+- [x] Responsive total : vérifié sur mobile 375x812 (5 pages : header, tabs, tab bar corrects), tablette et desktop (1280px)
+- [x] Carrousel Mes Cartes : la 2e carte visible affichait "Jean Dupont XX2200 12/27" superposé au montant — corrigé : nom remonté en haut à gauche, logo CB + VISA réduit en bas à droite, XX2200/12/27 en nowrap sans superposition (vérifié en zoom)
