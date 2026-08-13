@@ -1,15 +1,15 @@
 {
-  "framework": "vite",
   "buildCommand": "vite build",
   "outputDirectory": "dist",
+  "installCommand": "npm install",
   "functions": {
-    "api/trpc.js": {
+    "api/*.js": {
       "maxDuration": 30
     }
   },
   "rewrites": [
     {
-      "source": "/api/trpc/:path*",
+      "source": "/api/trpc(/.*)?",
       "destination": "/api/trpc"
     }
   ]
